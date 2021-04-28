@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/php/formularioAutoevaluador/css/normalize.css">
+	<link rel="stylesheet" href="http://localhost/php/formularioAutoevaluador/css/autoevaluador.css">
+
+	<script src="http://localhost/php/formularioAutoevaluador/jquery-3.2.1.min.js"></script>
+	<script src="http://localhost/php/formularioAutoevaluador/jqueryNumeric/jquery.numeric.js"></script>
+
+</head>
+<body>
+	<main>
+		<form action="http://localhost/php/formularioAutoevaluador/php/autoevaluador.php" class="formulario" name="formulario" 
+		id="formulario" method="post" onsubmit="return validarForm();">
+
+			<!-- Grupo: Ruc -->
+			<div class="formulario__grupo" id="grupo__ruc">
+				<label for="ruc" class="formulario__label">RUC de la empresa</label>
+				<div class="formulario__grupo-input">
+					<input type="tel" class="formulario__input positive-integer" 
+					name="ruc" id="ruc" maxlength="11">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El ruc debe contar con 11 dígitos.</p>
+			</div>
+
+			<!-- Grupo: Teléfono -->
+			<div class="formulario__grupo" id="grupo__celular">
+				<label for="celular" class="formulario__label">Celular de contacto</label>
+				<div class="formulario__grupo-input">
+					<input type="tel" class="formulario__input positive-integer" 
+					name="celular" id="celular" maxlength="9">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El celular debe contar con 9 dígitos.</p>
+			</div>
+
+			<!-- Grupo: Correo Electronico -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">Correo corporativo</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" 
+					name="correo" id="correo">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo ingresado debe ser un correo corporativo.</p>
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
+
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button type="submit" name="validar" class="formulario__btn">APLICAR</button>
+			</div>
+		</form>
+	</main>
+
+	<script src="http://localhost/php/formularioAutoevaluador/js/autoevaluador.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="http://localhost/php/formularioAutoevaluador/js/validarCualquierNumero.js"></script>
+
+</body>
+</html>
